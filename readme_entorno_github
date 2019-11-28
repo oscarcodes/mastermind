@@ -1,0 +1,22 @@
+Instala git
+	apt-get install git
+
+Configura tu usuario de git
+	git config --global user.name "aqui_tu_usuario_de_git"
+
+Configura tu correo de git
+	git config --global user.email "aqui_tu_correo_de_git"
+
+Inicialitza el repositorio
+	git init mastermind
+
+Añade el repositorio remoto
+	git remote add mastermind https://github.com/oscarcodes/mastermind
+
+Recibe en local los archivos remotos 
+	git pull mastermind master
+
+Sincroniza con la rama principal
+	git pull --rebase mastermind master
+
+

@@ -1,5 +1,6 @@
 /*
 
+	Version 0.0
 	FOPR_Q1_2019 mastermind
 	Andrew Harol García
 	Òscar Codes i Ramos
