@@ -1,7 +1,11 @@
 Mode Interactiu (I) o Joc de proves (J) : 
 BENVINGUT AL JOC MASTERMIND!!
+Quin mode de joc vols triar, Manual (M)/ Aleatori (A)? : 
+Mode de joc incorrecte.
+Quin mode de joc vols triar, Manual (M)/ Aleatori (A)? :
 Jugador A, escull el codi secret:
-0
+codi secret incorrecte.
+
 XXXX
 XXXX
 XXXX

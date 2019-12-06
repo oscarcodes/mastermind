@@ -17,21 +17,38 @@
 
 using namespace std;
 
+char demanar_joc(){
+	//Pre: 
+	//Post: Retorna una opció valida 'M' o 'A'
+	char opcio;
+	cout<<"Quin mode de joc vols triar, Manual (M)/ Aleatori (A)? : ";
+	cin>>opcio;
+	while (opcio!='M' and opcio!='A'){
+	//Inv: Les opcions entrades fins ara son !='M' i !='A'
+		cout<<endl<<"Mode de joc incorrecte.";
+		cout<<endl<<"Quin mode de joc vols triar, Manual (M)/ Aleatori (A)? :";
+		cin>>opcio;
+	}
+	cout<< endl;
+	return opcio;
+}
+
 char demanar_opcio(){
 	//Pre: 
-	//Post: Retorna una opció valida 'J' o 'I'
+	//Post: Retorna una opció valida 'I' o 'J'
 	char opcio;
 	cout<<"Mode Interactiu (I) o Joc de proves (J) : ";
 	cin>>opcio;
-	while (opcio!='J' and opcio!='I'){
+	while (opcio!='I' and opcio!='J'){
 	//Inv: Les opcions entrades fins ara son !='J' i !='I'
-		cout<<"Mode de joc incorrecte."<<endl;
+		cout<<endl<<"Mode de joc incorrecte.";
 		cout<<"Mode Interactiu (I) o Joc de proves (J) : ";
 		cin>>opcio;
 	}
 	cout<< endl;
 	return opcio;
 }
+
 
 bool diferents(const vector<int>& v){
 	//Pre: v es un vector d'enters no buit
@@ -82,7 +99,7 @@ while (x>0){
 	x=x/10;
 }
 
-for (unsigned int i=0; i<v.size(); ++i) cout<<v[i]<<" ";
+//for (unsigned int i=0; i<v.size(); ++i) cout<<v[i]<<" ";
 	cout<<endl;
 //Girem el contingut
 unsigned int n=v.size(), j;
@@ -103,16 +120,32 @@ int main() {
 	mode=demanar_opcio();
 
 	cout<<"BENVINGUT AL JOC MASTERMIND!!"<<endl;
+	
+	char joc;
+	joc=demanar_joc();
+
 
 	// (DEMANAR EL CODI SECRET PER PANTALLA)
 
-	cout << "Jugador A, escull el codi secret:"<<endl;	
+	cout << "Jugador A, escull el codi secret:";	
 
 	int codi_secret;
+	vector<int> v_codi_secret;
 
 	cin>>codi_secret;
+	v_codi_secret=separar(codi_secret);
 
-	cout<< codi_secret << endl;
+	if (diferents(v_codi_secret)) {
+		cout<<"codi secret incorrecte."<<endl;
+		cin>>codi_secret;
+		//cout<<"en bucles";
+		v_codi_secret=separar(codi_secret);
+	}	
+
+	//cout<<"despues";
+
+
+	//cout<< codi_secret << endl;
 
 	// Neteja pantalla o no depenen de si es mode Interactiu o no
 	if (mode=='I') system("clear");
