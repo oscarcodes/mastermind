@@ -50,9 +50,10 @@ char demanar_opcio(){
 }
 
 
-bool diferents(const vector<int>& v){
+bool correcte(const vector<int>& v){
 	//Pre: v es un vector d'enters no buit
-	//Post: Retorn true si tots els elements de v son diferents sino retorna false
+	//Post: Retorna true si tots els elements de v son diferents i no son 0 ni 9
+	//	sino retorna false
 	bool trobat=false;
 	unsigned int i=0;
 	while (i<v.size() and not trobat){
@@ -61,7 +62,8 @@ bool diferents(const vector<int>& v){
 		while (j<v.size() and not trobat) {
 			//Inv: els elements [0..i-1] no estan repetits
 			// i a més a més l'element i no està a [0..j-1]
-			if ((v[i]==v[j]) or (v[i]==0)) trobat=true;
+			// ni es un 0, ni es un 9
+			if ((v[i]==v[j]) or (v[i]==0) or (v[i]==9)) trobat=true;
 			else ++j;
 		}
 		if (not trobat) ++i;
@@ -135,7 +137,7 @@ int main() {
 	cin>>codi_secret;
 	v_codi_secret=separar(codi_secret);
 
-	while (!(diferents(v_codi_secret))) {
+	while (!(correcte(v_codi_secret))) {
 		cout<<"codi secret incorrecte."<<endl;
 		cin>>codi_secret;
 		//cout<<"en bucles";
