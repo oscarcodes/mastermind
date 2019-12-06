@@ -17,6 +17,10 @@
 
 using namespace std;
 
+typedef	vector <int> jugada;
+typedef	vector <jugada> matriu_jugades;
+
+
 char demanar_joc(){
 	//Pre: 
 	//Post: Retorna una opció valida 'M' o 'A'
@@ -26,7 +30,7 @@ char demanar_joc(){
 	while (opcio!='M' and opcio!='A'){
 	//Inv: Les opcions entrades fins ara son !='M' i !='A'
 		cout<<endl<<"Mode de joc incorrecte.";
-		cout<<endl<<"Quin mode de joc vols triar, Manual (M)/ Aleatori (A)? :";
+		cout<<endl<<"Quin mode de joc vols triar, Manual (M)/ Aleatori (A)? : ";
 		cin>>opcio;
 	}
 	cout<< endl;
@@ -52,22 +56,26 @@ char demanar_opcio(){
 
 bool correcte(const vector<int>& v){
 	//Pre: v es un vector d'enters no buit
-	//Post: Retorna true si tots els elements de v son diferents i no son 0 ni 9
-	//	sino retorna false
+	//Post: Retorna true si la mida del vector es 4, tots els elements de v son diferents, 		//	i els elements es troben a [1..8]
+	//	En cas contrari retorna false
 	bool trobat=false;
-	unsigned int i=0;
-	while (i<v.size() and not trobat){
-		//Inv: els elements [0..i-1] no estan repetits
-		unsigned int j=i+1;
-		while (j<v.size() and not trobat) {
+	if (v.size()==4) {
+		unsigned int i=0;
+		while (i<v.size() and not trobat){
 			//Inv: els elements [0..i-1] no estan repetits
-			// i a més a més l'element i no està a [0..j-1]
-			// ni es un 0, ni es un 9
-			if ((v[i]==v[j]) or (v[i]==0) or (v[i]==9)) trobat=true;
-			else ++j;
+			unsigned int j=i+1;
+			while (j<v.size() and not trobat) {
+				//Inv: els elements [0..i-1] no estan repetits
+				// i a més a més l'element i no està a [0..j-1]
+				// ni es un 0, ni es un 9
+				if ((v[i]==v[j]) or (v[i]==0) or (v[i]==9)) trobat=true;
+				else ++j;
+			}
+			if (not trobat) ++i;
 		}
-		if (not trobat) ++i;
 	}
+	else trobat=true;
+
 	return not trobat;
 }
 
@@ -119,6 +127,7 @@ return v;
 int main() {
 
 	char mode;
+	bool guanyat=false;
 	mode=demanar_opcio();
 
 	cout<<"BENVINGUT AL JOC MASTERMIND!!"<<endl;
@@ -129,7 +138,7 @@ int main() {
 
 	// (DEMANAR EL CODI SECRET PER PANTALLA)
 
-	cout << "Jugador A, escull el codi secret:";	
+	cout << "Jugador A, escull el codi secret: ";	
 
 	int codi_secret;
 	vector<int> v_codi_secret;
@@ -139,15 +148,11 @@ int main() {
 
 	while (!(correcte(v_codi_secret))) {
 		cout<<"codi secret incorrecte."<<endl;
+		cout << "Jugador A, escull el codi secret: ";
+
 		cin>>codi_secret;
-		//cout<<"en bucles";
 		v_codi_secret=separar(codi_secret);
 	}	
-
-	//cout<<"despues";
-
-
-	//cout<< codi_secret << endl;
 
 	// Neteja pantalla o no depenen de si es mode Interactiu o no
 	if (mode=='I') system("clear");
@@ -156,13 +161,57 @@ int main() {
 
 	bool fin_juego=false;
 	int intents=0;
-	
+
+	matriu_jugades m_jugades(1,jugada(4));
+
 	while (not(fin_juego) and intents<15) {
 		// (DEMANAR INTENT)
-		int codigo_jugador_b;
-		cin>> codigo_jugador_b;
-		if (codigo_jugador_b==9999) fin_juego=true;
-		cout<<"XXXX"<<endl;
+
+		cout<<"Jugador B, intent "<< (intents+1) << ": ";
+		int codi_jugador_b;
+		vector<int> v_codi_jugador_b;
+
+		cin>> codi_jugador_b;
+		v_codi_jugador_b=separar(codi_jugador_b);
+
+		while (!(correcte(v_codi_jugador_b))) {
+			cout<<"intent incorrecte."<<endl;
+			cout<<"Jugador B, intent "<< (intents+1) << ": ";
+			cin>>codi_jugador_b;
+			v_codi_jugador_b=separar(codi_jugador_b);
+		}	
+		
+		string resposta;
+		
+		if (correcte(v_codi_jugador_b)) {
+			if (intents==0) m_jugades.pop_back(); 			
+			m_jugades.push_back(v_codi_jugador_b);
+			//cout<<v_codi_jugador_b.size()<<endl;			
+			//cout<<m_jugades[0].size()<<endl;
+			cout<<"Jugades:"<<endl;
+			for(int k=0;k<=intents;++k){
+				jugada tmp_jugada(4);
+				tmp_jugada.assign(m_jugades[k].begin(),m_jugades[k].end());
+
+				resposta = genera_resposta(v_codi_secret,tmp_jugada);
+				if (((k+1)/10)==0) cout<<"0";
+				cout<< (k+1)<<"   "	<< tmp_jugada[0]
+							<< tmp_jugada[1]
+							<< tmp_jugada[2]
+							<< tmp_jugada[3]
+							<< "   "
+							<< resposta
+							<<endl;
+			}
+		}
+
+		if (v_codi_jugador_b[0]==9 and v_codi_jugador_b[1]==9  
+			and v_codi_jugador_b[2]==9 and v_codi_jugador_b[3]==9) fin_juego=true;
+		if (resposta=="XXXX") {
+			fin_juego=true;
+			guanyat=true;
+		}
+
 		++intents;
 		// (COMPARAR AMB EL CODI SECRET)
 		// (MOSTRAR RESULTATS)
@@ -171,7 +220,8 @@ int main() {
 	
 	// (MOSTRAR MISSATGE FINAL DEPENEN DE SI EL RESULTAT ES "XXXX" O NO
 
-
+	if (intents==15) cout <<"Has esgotat els 15 intents."<<endl;
+	if (guanyat) cout <<"Felicitats jugador B!! Has guanyat!!"<<endl;
 
 
 }
