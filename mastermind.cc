@@ -17,7 +17,6 @@
 
 using namespace std;
 
-
 char demanar_opcio(){
 	//Pre: 
 	//Post: Retorna una opció valida 'J' o 'I'
@@ -30,6 +29,7 @@ char demanar_opcio(){
 		cout<<"Mode Interactiu (I) o Joc de proves (J) : ";
 		cin>>opcio;
 	}
+	cout<< endl;
 	return opcio;
 }
 
@@ -85,7 +85,7 @@ while (x>0){
 for (unsigned int i=0; i<v.size(); ++i) cout<<v[i]<<" ";
 	cout<<endl;
 //Girem el contingut
-int n=v.size(), j;
+unsigned int n=v.size(), j;
 for(unsigned int i=0; i<n/2; ++i){
 	// Invariant: hem girat els numeros que estan entre 0 i i-1
 	j= n-i-1;
@@ -99,20 +99,36 @@ return v;
 
 int main() {
 
-	cout<<"Mode Interactiu (I) o Joc de proves (J) : "<<endl;
 	char mode;
-	cin>>mode;
+	mode=demanar_opcio();
+
 	cout<<"BENVINGUT AL JOC MASTERMIND!!"<<endl;
 
-	// (DEMANAR EL CODI SECRET PER PANTALLA)	
+	// (DEMANAR EL CODI SECRET PER PANTALLA)
+
+	cout << "Jugador A, escull el codi secret:"<<endl;	
+
+	int codi_secret;
+
+	cin>>codi_secret;
+
+	cout<< codi_secret << endl;
 
 	// Neteja pantalla o no depenen de si es mode Interactiu o no
 	if (mode=='I') system("clear");
 
 	// (Inicialitzar variables)
+
+	bool fin_juego=false;
+	int intents=0;
 	
 	while (not(fin_juego) and intents<15) {
 		// (DEMANAR INTENT)
+		int codigo_jugador_b;
+		cin>> codigo_jugador_b;
+		if (codigo_jugador_b==9999) fin_juego=true;
+		cout<<"XXXX"<<endl;
+		++intents;
 		// (COMPARAR AMB EL CODI SECRET)
 		// (MOSTRAR RESULTATS)
 		// (Si resultat es "XXXX" llavors fin_juego es true sino sumar 1 als intents
