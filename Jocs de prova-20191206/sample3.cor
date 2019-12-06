@@ -1,0 +1,161 @@
+Mode Interactiu (I) o Joc de proves (J) : 
+BENVINGUT AL JOC MASTERMIND!!
+Quin mode de joc vols triar, Manual (M)/ Aleatori (A)? : 
+Mode de joc incorrecte.
+Quin mode de joc vols triar, Manual (M)/ Aleatori (A)? : 
+Jugador A, escull el codi secret: 
+codi secret incorrecte.
+Jugador A, escull el codi secret: 
+Jugador B, intent 1: 
+Jugades:
+01   1265   ----
+Jugador B, intent 2: 
+Jugades:
+01   1265   ----
+02   1264   ---X
+Jugador B, intent 3: 
+Jugades:
+01   1265   ----
+02   1264   ---X
+03   1275   --O-
+Jugador B, intent 4: 
+Jugades:
+01   1265   ----
+02   1264   ---X
+03   1275   --O-
+04   1274   --OX
+Jugador B, intent 5: 
+Jugades:
+01   1265   ----
+02   1264   ---X
+03   1275   --O-
+04   1274   --OX
+05   1374   -OOX
+Jugador B, intent 6: 
+Jugades:
+01   1265   ----
+02   1264   ---X
+03   1275   --O-
+04   1274   --OX
+05   1374   -OOX
+06   2374   -OOX
+Jugador B, intent 7: 
+intent incorrecte.
+Jugador B, intent 7: 
+Jugades:
+01   1265   ----
+02   1264   ---X
+03   1275   --O-
+04   1274   --OX
+05   1374   -OOX
+06   2374   -OOX
+07   5374   -OOX
+Jugador B, intent 8: 
+Jugades:
+01   1265   ----
+02   1264   ---X
+03   1275   --O-
+04   1274   --OX
+05   1374   -OOX
+06   2374   -OOX
+07   5374   -OOX
+08   6374   -OOX
+Jugador B, intent 9: 
+Jugades:
+01   1265   ----
+02   1264   ---X
+03   1275   --O-
+04   1274   --OX
+05   1374   -OOX
+06   2374   -OOX
+07   5374   -OOX
+08   6374   -OOX
+09   8374   OOOX
+Jugador B, intent 10: 
+Jugades:
+01   1265   ----
+02   1264   ---X
+03   1275   --O-
+04   1274   --OX
+05   1374   -OOX
+06   2374   -OOX
+07   5374   -OOX
+08   6374   -OOX
+09   8374   OOOX
+10   8734   OOXX
+Jugador B, intent 11: 
+Jugades:
+01   1265   ----
+02   1264   ---X
+03   1275   --O-
+04   1274   --OX
+05   1374   -OOX
+06   2374   -OOX
+07   5374   -OOX
+08   6374   -OOX
+09   8374   OOOX
+10   8734   OOXX
+11   8134   O-XX
+Jugador B, intent 12: 
+Jugades:
+01   1265   ----
+02   1264   ---X
+03   1275   --O-
+04   1274   --OX
+05   1374   -OOX
+06   2374   -OOX
+07   5374   -OOX
+08   6374   -OOX
+09   8374   OOOX
+10   8734   OOXX
+11   8134   O-XX
+12   7134   X-XX
+Jugador B, intent 13: 
+Jugades:
+01   1265   ----
+02   1264   ---X
+03   1275   --O-
+04   1274   --OX
+05   1374   -OOX
+06   2374   -OOX
+07   5374   -OOX
+08   6374   -OOX
+09   8374   OOOX
+10   8734   OOXX
+11   8134   O-XX
+12   7134   X-XX
+13   7634   X-XX
+Jugador B, intent 14: 
+Jugades:
+01   1265   ----
+02   1264   ---X
+03   1275   --O-
+04   1274   --OX
+05   1374   -OOX
+06   2374   -OOX
+07   5374   -OOX
+08   6374   -OOX
+09   8374   OOOX
+10   8734   OOXX
+11   8134   O-XX
+12   7134   X-XX
+13   7634   X-XX
+14   7534   X-XX
+Jugador B, intent 15: 
+Jugades:
+01   1265   ----
+02   1264   ---X
+03   1275   --O-
+04   1274   --OX
+05   1374   -OOX
+06   2374   -OOX
+07   5374   -OOX
+08   6374   -OOX
+09   8374   OOOX
+10   8734   OOXX
+11   8134   O-XX
+12   7134   X-XX
+13   7634   X-XX
+14   7534   X-XX
+15   7134   X-XX
+Has esgotat els 15 intents.

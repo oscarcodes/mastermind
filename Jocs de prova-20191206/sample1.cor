@@ -1,0 +1,27 @@
+Mode Interactiu (I) o Joc de proves (J) : 
+BENVINGUT AL JOC MASTERMIND!!
+Quin mode de joc vols triar, Manual (M)/ Aleatori (A)? : 
+Mode de joc incorrecte.
+Quin mode de joc vols triar, Manual (M)/ Aleatori (A)? : 
+Jugador A, escull el codi secret: 
+codi secret incorrecte.
+Jugador A, escull el codi secret: 
+codi secret incorrecte.
+Jugador A, escull el codi secret: 
+codi secret incorrecte.
+Jugador A, escull el codi secret: 
+codi secret incorrecte.
+Jugador A, escull el codi secret: 
+Jugador B, intent 1: 
+Jugades:
+01   3421   --OO
+Jugador B, intent 2: 
+Jugades:
+01   3421   --OO
+02   6512   OOXX
+Jugador B, intent 3: 
+Jugades:
+01   3421   --OO
+02   6512   OOXX
+03   5612   XXXX
+Felicitats jugador B!! Has guanyat!!

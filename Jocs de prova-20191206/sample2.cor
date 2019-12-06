@@ -1,0 +1,65 @@
+Mode Interactiu (I) o Joc de proves (J) : 
+BENVINGUT AL JOC MASTERMIND!!
+Quin mode de joc vols triar, Manual (M)/ Aleatori (A)? : 
+Jugador A, escull el codi secret: 
+Jugador B, intent 1: 
+intent incorrecte.
+Jugador B, intent 1: 
+Jugades:
+01   3478   ----
+Jugador B, intent 2: 
+Jugades:
+01   3478   ----
+02   1234   OO--
+Jugador B, intent 3: 
+Jugades:
+01   3478   ----
+02   1234   OO--
+03   4123   -OO-
+Jugador B, intent 4: 
+Jugades:
+01   3478   ----
+02   1234   OO--
+03   4123   -OO-
+04   6412   O-XX
+Jugador B, intent 5: 
+intent incorrecte.
+Jugador B, intent 5: 
+Jugades:
+01   3478   ----
+02   1234   OO--
+03   4123   -OO-
+04   6412   O-XX
+05   7612   -XXX
+Jugador B, intent 6: 
+Jugades:
+01   3478   ----
+02   1234   OO--
+03   4123   -OO-
+04   6412   O-XX
+05   7612   -XXX
+06   8612   -XXX
+Jugador B, intent 7: 
+Jugades:
+01   3478   ----
+02   1234   OO--
+03   4123   -OO-
+04   6412   O-XX
+05   7612   -XXX
+06   8612   -XXX
+07   3612   -XXX
+Jugador B, intent 8: 
+intent incorrecte.
+Jugador B, intent 8: 
+intent incorrecte.
+Jugador B, intent 8: 
+Jugades:
+01   3478   ----
+02   1234   OO--
+03   4123   -OO-
+04   6412   O-XX
+05   7612   -XXX
+06   8612   -XXX
+07   3612   -XXX
+08   5612   XXXX
+Felicitats jugador B!! Has guanyat!!
