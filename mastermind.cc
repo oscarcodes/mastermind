@@ -68,7 +68,7 @@ bool correcte(const vector<int>& v){
 				//Inv: els elements [0..i-1] no estan repetits
 				// i a més a més l'element i no està a [0..j-1]
 				// ni es un 0, ni es un 9
-				if ((v[i]==v[j]) or (v[i]==0) or (v[i]==9)) trobat=true;
+				if ((v[i]==v[j]) or (v[i]==0) or (v[i]==9) or (v[i]==0)) trobat=true;
 				else ++j;
 			}
 			if (not trobat) ++i;
